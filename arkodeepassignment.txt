@@ -1,0 +1,70 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\Arka\Desktop\Assignment> mkdir Source
+
+    Directory: C:\Users\Arka\Desktop\Assignment
+
+
+Mode                 LastWriteTime         Length Name                                                                                            
+----                 -------------         ------ ----                                                                                            
+d-----        02-11-2021     15:27                Source                                                                                          
+    Directory: C:\Users\Arka\Desktop\Assignment
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        02-11-2021     15:27                Destination
+
+
+PS C:\Users\Arka\Desktop\Assignment> cp Source/ textthree.txt Destination
+Copy-Item : A positional parameter cannot be found that accepts argument 'Destination'.
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.CopyItemCommand
+ 
+PS C:\Users\Arka\Desktop\Assignment> cd Source/
+PS C:\Users\Arka\Desktop\Assignment\Source> cd..
+PS C:\Users\Arka\Desktop\Assignment> cp Source/textthree.txt Destination 
+PS C:\Users\Arka\Desktop\Assignment> cd Destination/
+PS C:\Users\Arka\Desktop\Assignment\Destination> ls
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        02-11-2021     15:30            129 textthree.txt
+
+
+PS C:\Users\Arka\Desktop\Assignment\Destination> rm textthree.txt
+PS C:\Users\Arka\Desktop\Assignment\Destination> ls
+PS C:\Users\Arka\Desktop\Assignment\Destination> cd..
+Move-Item : A positional parameter cannot be found that accepts argument 'Destination/'.
+At line:1 char:1
++ mv Source/ textthree.txt Destination/
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Move-Item], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.MoveItemCommand
+ 
+PS C:\Users\Arka\Desktop\Assignment> mv Source/textthree.txt Destination
+PS C:\Users\Arka\Desktop\Assignment> cd Destination/
+PS C:\Users\Arka\Desktop\Assignment\Destination> ls
+
+
+    Directory: C:\Users\Arka\Desktop\Assignment\Destination
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        02-11-2021     15:30            129 textthree.txt
+
+
+PS C:\Users\Arka\Desktop\Assignment\Destination> grep -i 'functionup' textthree.txt
+grep : The term 'grep' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or 
+if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ grep -i 'functionup' textthree.txt
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (grep:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\Arka\Desktop\Assignment\Destination>
